@@ -1,0 +1,131 @@
+/* APP STYLE GUIDE */
+
+/* FONT FACES */
+
+/* @font-face {
+  font-family: "Futura";
+  src: url("/Users/vicsilseg/Documents/FittoProyecto/src/styles/fonts/futuraPT/FuturaPTLight.otf")
+    format("otf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("/Users/vicsilseg/Documents/FittoProyecto/src/styles/fonts/futuraPT/FuturaPTLightOblique.otf")
+    format("otf");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("/Users/vicsilseg/Documents/FittoProyecto/src/styles/fonts/futuraPT/FuturaPTDemi.otf")
+    format("otf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("/Users/vicsilseg/Documents/FittoProyecto/src/styles/fonts/futuraPT/FuturaPTDemiOblique.otf")
+    format("otf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("/Users/vicsilseg/Documents/FittoProyecto/src/styles/fonts/futuraPT/FuturaPTBold.otf")
+    format("otf");
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura";
+  src: url("/Users/vicsilseg/Documents/FittoProyecto/src/styles/fonts/futuraPT/FuturaPTBold.otf")
+    format("otf");
+  font-weight: bolder;
+  font-style: normal;
+} */
+
+html {
+  font-family: "futura-pt", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #453543;
+}
+
+/* Main flex container */
+
+.my-container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.my-section {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons from Sign sections */
+
+.buttoner {
+  max-width: 600px;
+  height: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: flex-end;
+}
+.button {
+  flex-basis: 100%;
+  max-height: 60px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  font-size: 1rem;
+  letter-spacing: 0.04rem;
+}
+.button__item {
+  padding: 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+.active {
+  border: 3px solid #453543;
+  align-self: flex-start;
+  background: #453543;
+  color: #f7f7f2;
+  font-weight: 400;
+}
+.inactive {
+  border: 0.1rem solid #453543;
+  align-self: flex-end;
+  font-weight: 300;
+  color: #453543;
+}
+
+/* FORM AND INPUT */
+
+input{
+  font-size: 1.5rem;
+  border-bottom:1px solid #453543;
+  margin-bottom: 10px;
+}
+label{
+  height:auto;
+  display:inline-block;
+}
+input,label{
+  font-family: "futura-pt", Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  color: #453543;
+}
