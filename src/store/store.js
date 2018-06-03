@@ -7,9 +7,9 @@ Vue.use(Vuex)
 
 const state = {
   usuario: {
-    nombre: 'Víctor',
-    apellidos: ['Silva', 'Segarra'],
-    bio: '',
+    nombre: '',
+    apellidos: ['', ''],
+    bio: 'Esta es mi biografía',
     email: '',
     codigo: null,
     avatar: {

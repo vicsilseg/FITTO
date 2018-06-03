@@ -62,22 +62,21 @@
       <video autoplay muted loop id='fittoVideo'>
           <source src='../assets/VideoFitto.mp4' type='video/mp4'>
       </video>
-      <pre style='position:absolute; bottom:0; left:0; font-size:8px;'>{{$data}}</pre>
+      <pre style='position:absolute; top:0; right:0; font-size:8px; color: green;'>{{$data}}</pre>
     </main>
 </template>
 
 <script>
 // eslint-disable-next-line
-import VideoFitto from '../assets/VideoFitto.mp4';
-
+import VideoFitto from '../assets/VideoFitto.mp4'
 export default {
   data () {
     return {
       isLogin: true,
       isSignIn: false,
       isSignUp: false,
-      maxLength: 0,
       formatCode: null,
+      maxLength: 0,
 
       LoginForm: {
         nombre: null,
@@ -88,14 +87,13 @@ export default {
     }
   },
 
-  computed: {},
   methods: {
     forCodeFormat (e) {
-      console.log(this.formatCode.length)
       this.formatCode = String(this.formatCode)
+      this.LoginForm.codigo = this.formatCode
       var char = []
-      if (this.formatCode.length === 0 && this.maxLength === 2) {
-        return (this.maxLength = false)
+      if (this.formatCode.length === 0) {
+        return (this.maxLength = 0)
       }
       if (this.formatCode.length === 4 && this.maxLength === 0) {
         char[0] = this.formatCode.substring(0, 4)
@@ -107,6 +105,9 @@ export default {
         this.formatCode += '-'
         this.maxLength = 2
       }
+      /* if (this.formatCode.length === 14) {
+        this.LoginForm.codigo = this.formatCode
+      } */
     },
 
     closeLogin () {
@@ -129,13 +130,24 @@ export default {
     },
 
     SignUp (e) {
-      /* console.log('sign up', e) */
+      const commit = this.$store.commit
+      let valores = {}
+
       if (this.isLogin) {
         this.isSignUp = !this.isSignUp
         this.isLogin = !this.isLogin
       } else if (!this.isLogin && this.isSignUp) {
-        console.log('Signin Up')
+        this.infoToStore(valores)
+        commit('settingInitialValues', valores)
+        this.$router.push('/')
       }
+    },
+    infoToStore (valores) {
+      let userInfo = this.LoginForm
+      for (let propiedad in userInfo) {
+        valores[propiedad] = userInfo[propiedad]
+      }
+      return valores
     }
   }
 }
