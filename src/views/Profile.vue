@@ -12,31 +12,28 @@
             <v-touch @swipeup="swipeToCreations($event)" class="swipe-more">
                 <p>Desliza para ver tus creaciones</p>
                 <img id="swipe-up" src="../assets/icon/Fitto–swipeUp.svg" alt="Swipe Up">
-            </v-touch> 
+            </v-touch>
         </section>
         <section v-else-if="profileViews.areCreationsShown">
             <h1>Tus Creaciones</h1>
             <!-- <section id="gallery" v-for="item in gallery" :key="item.id"> -->
-
-            </section>
         </section>
     </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+/* eslint-disable */
+import { mapState } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
-        profileViews:{
-            isProfile:true,
-            isProfileEdit:false,
-            areCreationsShown:false,
-
-        }
-        
-    };
-  },
+      profileViews: {
+        isProfile: true,
+        isProfileEdit: false,
+        areCreationsShown: false
+    }
+  }
+},
   computed: mapState({
     nombre: state => state.usuario.nombre,
     apellidos: state => state.usuario.apellidos,
@@ -46,14 +43,13 @@ export default {
     avatar: state => state.usuario.avatar
   }),
   methods: {
-    editProfile() {
+    editProfile () {
       console.log("edit profile");
     },
-    savedPosts() {
+    savedPosts () {
       console.log("saved posts");
     },
-    swipeToCreations(e) {
-      console.log(e);
+    swipeToCreations (e) {
       this.profileViews.isProfile = !this.profileViews.isProfile;
       this.profileViews.areCreationsShown = !this.profileViews.areCreationsShown;
     }

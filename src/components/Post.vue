@@ -9,22 +9,22 @@
 </template>
 <script>
 
-import axios from 'axios';
-
+import axios from 'axios'
+/* eslint-disable */
 export default {
-  mounted(){
-      axios.get('https://randomuser.me/api/') //FIXME: Cambiar la api
-      .then((respuesta) =>{
-          this.persona = respuesta.data.results[0]; 
-      });
+mounted () {
+  axios.get('https://randomuser.me/api/') //FIXME: Cambiar la api
+  .then((respuesta) =>{
+    this.persona = respuesta.data.results[0]; 
+  });
   },
-  data(){
+  data () {
       return{
           persona: null,
       }
   },
   computed:{
-      datosPersona(){
+      datosPersona () {
           return{
               nombre:`${this.persona.name.first} ${this.persona.name.last}`,
               foto: this.persona.picture.large,

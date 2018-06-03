@@ -1,24 +1,23 @@
 <template>
-
     <router-view></router-view>
     <!-- <post></post> -->
 </template>
 
 <script>
-import post from "./components/Post.vue";
-import { mapState } from "vuex";
+import post from './components/Post.vue'
+/* import { mapState } from "vuex" */
 export default {
-  name: "app",
+  name: 'app',
   components: {
     post
   },
-  data() {
-    return {};
+  data () {
+    return {}
   },
-  beforeMount() {
-    this.$router.push("/login");
-  },
-};
+  beforeMount () {
+    this.$router.push('/login')
+  }
+}
 </script>
 
 <style>

@@ -7,6 +7,5 @@
     <router-link to="/figures">Figuras</router-link>
     <router-link to="/profile">Mi Perfil</router-link>
     <hr>
-    
 </div>
-</template> 
+</template>

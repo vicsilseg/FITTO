@@ -1,33 +1,33 @@
-import Main from "../views/Main";
-import About from "../views/About";
-import Figures from "../views/Figures";
-import Profile from "../views/Profile";
-import Loading from "../views/Loading";
-import Login from "../views/Login";
+import Main from '../views/Main'
+import About from '../views/About'
+import Figures from '../views/Figures'
+import Profile from '../views/Profile'
+import Loading from '../views/Loading'
+import Login from '../views/Login'
 
 export const routes = [
   {
-    path: "/",
+    path: '/',
     component: Main
   },
   {
-    path: "/profile",
+    path: '/profile',
     component: Profile
   },
   {
-    path: "/figures",
+    path: '/figures',
     component: Figures
   },
   {
-    path: "/about",
+    path: '/about',
     component: About
   },
   {
-    path: "/loading",
+    path: '/loading',
     component: Loading
   },
   {
-    path: "/login",
+    path: '/login',
     component: Login
-  },
-];
+  }
+]
