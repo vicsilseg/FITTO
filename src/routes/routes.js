@@ -5,6 +5,7 @@ import Profile from '../views/Profile'
 import Loading from '../views/Loading'
 import Login from '../views/Login'
 import Gallery from '../views/Gallery'
+import Play from '../views/Play'
 
 export const routes = [
   {
@@ -26,6 +27,11 @@ export const routes = [
     path: '/about/gallery',
     name: 'Gallery',
     component: Gallery
+  },
+  {
+    path: '/play',
+    name: 'Play',
+    component: Play
   },
   /* Juega */
   {

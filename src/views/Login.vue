@@ -34,7 +34,7 @@
         <!-- Sign in //TODO: v-for-->
         <div v-if="isSignIn" class='fitto-form signup'>
           <label for='my-email'>Correo Electrónico</label>
-          <input id='my-email' type='email'>
+          <input v-model="LoginForm.email" id='my-email' type='email'>
           <label for='my-code'>Código de Usuario</label>
           <input maxlength='14'
           @keyup="forCodeFormat($event)"
@@ -62,7 +62,7 @@
       <video autoplay muted loop id='fittoVideo'>
           <source src='../assets/VideoFitto.mp4' type='video/mp4'>
       </video>
-      <pre style='position:absolute; top:0; right:0; font-size:8px; color: green;'>{{$data}}</pre>
+      <!-- <pre style='position:absolute; top:0; right:0; font-size:8px; color: green;'>{{$data}}</pre> -->
     </main>
 </template>
 

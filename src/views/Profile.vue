@@ -83,7 +83,7 @@ export default {
   margin-bottom: 20px;
 }
 #userdata {
-  font-size: 2.6rem;
+  font-size: 2rem;
 }
 #avatar {
   min-width: 200px;
