@@ -1,8 +1,9 @@
 /* Componente de vista principal */
 <template>
-<main class="my-container" id="main">
+<main class='my-container' id='main'>
     <header id='secondary-menu'>
-      <router-link to='/'>
+      <router-link v-show="this.$route.name !=='Main'" to='/main'><img id='arrow-back' src='../assets/icon/Fitto-arrowBack.svg' alt='Back to Feed'></router-link>
+      <router-link to='/main'>
         <img class='logo-menu' src='../assets/Logo/fittoLogoDark.svg' alt='Logo'>
       </router-link>
       <router-link to='/profile'>
@@ -11,23 +12,17 @@
     </header>
 
     <section id='main-content'>
-    <!-- <v-touch @swipedown="swipeToReload($event)" v-bind:enabled="true" class="swipe-container">
-      
+    <!-- <v-touch @swipedown="swipeToReload($event)" v-bind:enabled="true" class='swipe-container'>
     </v-touch> -->
-      <post></post> 
-      <post></post> 
-      <post></post> 
-      <post></post> 
-      <post></post> 
-      <post></post> 
-    </section>
+    <router-view></router-view>
+  </section>
 
     <footer id='primary-menu'>
       <router-link to='/about'>
         <div class='route item'>
           <img class='menu-icon' src='../assets/icon/Fitto-info.svg' alt='¿Qué Es Fitto?'></div>
         </router-link>
-      <router-link to='/about/gallery'>
+      <router-link to='/gallery'>
         <div class='route item'>
           <img class='menu-icon' src='../assets/icon/Fitto-galeria.svg' alt='Galería'></div>
       </router-link>
@@ -53,14 +48,14 @@
 </main>
 </template>
 <script>
-import post from "../components/Post.vue";
+import post from '../components/Post.vue'
 export default {
-  data() {
+  data () {
     return {};
   },
   methods: {
     swipeToReload(e) {
-      alert("Reloading");
+      alert('Reloading');
     }
   },
   components: {
@@ -72,9 +67,8 @@ export default {
 <style scoped>
 #main {
   position: absolute;
-  top:10%;
+  top: 10%;
   height: 78%;
-  overflow-y: scroll;
 }
 .menu-icon {
   width: auto;
@@ -127,6 +121,13 @@ export default {
   height: 100%;
 }
 #secondary-menu a:first-of-type {
+  position: absolute;
+  left: 2%;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+}
+#secondary-menu a:nth-of-type(2) {
   width: 30%;
   padding: 5px 20px;
 }
@@ -137,8 +138,12 @@ export default {
   height: 60px;
   padding: 5px;
 }
+#arrow-back{
+  height:30%;
+  
+}
 .route {
-  border: 2px solid rgba(69, 53, 67, 0.3);
+  border: 1px solid rgba(69, 53, 67, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -166,6 +171,8 @@ export default {
 #main-content {
   position: absolute;
   width: 100%;
+  height:100%;
+  overflow-y: scroll;
   z-index: 0;
   background: #f7f7f2;
 }

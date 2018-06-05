@@ -1,5 +1,5 @@
 <template>
-    <main class='my-container'>
+    <main class='main-container'>
       <section class='my-section'>
         <!-- Menu UpBar -->
         <div id='upbar-menu'>
@@ -139,7 +139,7 @@ export default {
       } else if (!this.isLogin && this.isSignUp) {
         this.infoToStore(valores)
         commit('settingInitialValues', valores)
-        this.$router.push('/')
+        this.$router.push('/main')
       }
     },
     infoToStore (valores) {

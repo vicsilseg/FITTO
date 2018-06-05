@@ -5,49 +5,77 @@ import Profile from '../views/Profile'
 import Loading from '../views/Loading'
 import Login from '../views/Login'
 import Gallery from '../views/Gallery'
+import Posts from '../views/Posts'
+import SavedPosts from '../views/SavedPosts'
+import MyCreations from '../views/MyCreations'
+import EditProfile from '../views/EditProfile'
+/* import Video from '../views/Video' */
 import Play from '../views/Play'
 
 export const routes = [
   {
     path: '/',
-    name: 'Main',
-    component: Main
+    component: Main,
+    children: [
+      {
+        name: 'Main',
+        path: 'main',
+        component: Posts
+      },
+      {
+        name: 'Figures',
+        path: 'figures',
+        component: Figures
+      },
+      {
+        name: 'Gallery',
+        path: 'gallery',
+        component: Gallery
+      },
+      {
+        name: 'About',
+        path: 'about',
+        component: About
+      },
+      {
+        name: 'Profile',
+        path: 'profile',
+        component: Profile,
+        children: [
+          {
+            name: 'Edit Profile',
+            path: 'edit',
+            component: EditProfile
+          },
+          {
+            name: 'Saved Posts',
+            path: 'saved',
+            component: SavedPosts
+          },
+          {
+            name: 'My Creations',
+            path: 'creations',
+            component: MyCreations
+          }
+        ]
+      }
+    ]
   },
+  /* RUTAS DE PRIMER NIVEL */
   {
-    path: '/profile',
-    name: 'Profile',
-    component: Profile
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
-    path: '/about/gallery',
-    name: 'Gallery',
-    component: Gallery
-  },
-  {
-    path: '/play',
     name: 'Play',
+    path: '/play',
     component: Play
-  },
-  /* Juega */
-  {
-    path: '/figures',
-    name: 'Figures',
-    component: Figures
   },
   /* Help */
   {
-    path: '/loading',
     name: 'Loading',
+    path: '/loading',
     component: Loading
   },
   {
-    path: '/login',
     name: 'Login',
+    path: '/login',
     component: Login
   }
 ]

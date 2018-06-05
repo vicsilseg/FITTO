@@ -1,0 +1,17 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.49 134.53">
+    <defs>
+        <style>.cls-1{fill:#f7f7f2;}</style>
+    </defs>
+    <title>Fitto-figureRhino_1</title>
+    <g id="Capa_2" data-name="Capa 2">
+        <g id="Capa_1-2" data-name="Capa 1">
+            <path class="cls-1" d="M0,87.23H67.11V33.06S17.26,29.82,0,53.67Z"/>
+            <polygon class="cls-1" points="9.97 87.23 18.41 134.53 49.09 134.53 57.52 87.23 9.97 87.23"/>
+            <path class="cls-1" d="M134.22,87.23H67.11V33.06s46-.81,67.11,16.17Z"/>
+            <polygon class="cls-1" points="77.46 87.23 85.9 134.53 116.58 134.53 125.01 87.23 77.46 87.23"/>
+            <path class="cls-1" d="M134.22,87.22v-38h63.27S190.59,86,134.22,87.22Z"/>
+            <path class="cls-1" d="M155.21,39.22S155.05,0,155.21,0C163.37,0,179,29.89,179,39.22Z"/>
+        </g>
+    </g>
+</svg>

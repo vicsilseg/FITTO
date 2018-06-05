@@ -51,10 +51,32 @@ html {
   font-style: normal;
   color: #453543;
 }
+/* Main headers styles */
+
+h1,h2,h3,h4{
+  margin: 0;
+}
+
+h2{
+  text-align: center;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 8% auto;
+}
 
 /* Main flex container */
 
 .my-container {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  height: 78vh;
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+.main-container {
   overflow: hidden;
   position: relative;
   display: flex;

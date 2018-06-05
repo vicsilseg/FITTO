@@ -9,15 +9,15 @@
 </template>
 <script>
 export default {
-    data(){
-        return{}
-    },
-    methods: {
-        pasarFoto(e){
-            console.log(e);
-            console.log(e.srcElement["0"].files["0"]);
-        }
+  data() {
+    return {};
+  },
+  methods: {
+    pasarFoto(e) {
+      console.log(e);
+      console.log(e.srcElement["0"].files["0"]);
     }
-}
+  }
+};
 </script>
 
