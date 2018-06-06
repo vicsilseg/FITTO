@@ -6,6 +6,7 @@ import Loading from '../views/Loading'
 import Login from '../views/Login'
 import Gallery from '../views/Gallery'
 import Posts from '../views/Posts'
+import User from '../views/User'
 import SavedPosts from '../views/SavedPosts'
 import MyCreations from '../views/MyCreations'
 import EditProfile from '../views/EditProfile'
@@ -38,10 +39,16 @@ export const routes = [
         component: About
       },
       {
-        name: 'Profile',
-        path: 'profile',
-        component: Profile,
+        name: 'User',
+        path: 'user',
+        component: User,
+        redirect: 'user/profile',
         children: [
+          {
+            name: 'Profile',
+            path: 'profile',
+            component: Profile
+          },
           {
             name: 'Edit Profile',
             path: 'edit',

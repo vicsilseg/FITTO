@@ -1,6 +1,6 @@
 <template>
     <div class="my-container">
-        <section v-if="profileViews.isProfile" class="my-section">
+        <section class="my-section">
             <div class="profile-data">
                 <span>Bienvenid<span>o</span>,</span>
                 <h2 id="userdata">{{nombre}} {{apellidos[0]}}</h2>
@@ -14,10 +14,6 @@
                 <img id="swipe-up" src="../assets/icon/Fitto–swipeUp.svg" alt="Swipe Up">
             </v-touch>
         </section>
-        <section v-else-if="profileViews.areCreationsShown">
-            <h1>Tus Creaciones</h1>
-            <!-- <section id="gallery" v-for="item in gallery" :key="item.id"> -->
-        </section>
     </div>
 </template>
 
@@ -26,32 +22,31 @@
 import { mapState } from 'vuex'
 export default {
   data () {
-    return {
-      profileViews: {
-        isProfile: true,
-        isProfileEdit: false,
-        areCreationsShown: false
-    }
-  }
+    return {}
 },
-  computed: mapState({
-    nombre: state => state.usuario.nombre,
-    apellidos: state => state.usuario.apellidos,
-    bio: state => state.usuario.bio,
-    email: state => state.usuario.email,
-    codigo: state => state.usuario.codigo,
-    avatar: state => state.usuario.avatar
-  }),
+  computed: {
+    ...mapState({
+      nombre: state => state.usuario.nombre,
+      apellidos: state => state.usuario.apellidos,
+      bio: state => state.usuario.bio,
+      email: state => state.usuario.email,
+      codigo: state => state.usuario.codigo,
+      avatar: state => state.usuario.avatar
+    }),
+
+  },
+ 
   methods: {
     editProfile () {
-      console.log("edit profile");
+      console.log("edit profile")
+      this.$router.push('/user/edit')
     },
     savedPosts () {
-      console.log("saved posts");
+      console.log("saved posts")
+      this.$router.push('/user/saved')
     },
     swipeToCreations (e) {
-      this.profileViews.isProfile = !this.profileViews.isProfile;
-      this.profileViews.areCreationsShown = !this.profileViews.areCreationsShown;
+      this.$router.push('/user/creations')
     }
   }
 };

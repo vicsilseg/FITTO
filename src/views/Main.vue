@@ -6,16 +6,14 @@
       <router-link to='/main'>
         <img class='logo-menu' src='../assets/Logo/fittoLogoDark.svg' alt='Logo'>
       </router-link>
-      <router-link to='/profile'>
+      <router-link to='/user'>
         <img class='profile-icon' src='../assets/icon/Fitto-perfil.svg' alt='Mi Perfil'>
       </router-link>
     </header>
 
     <section id='main-content'>
-    <!-- <v-touch @swipedown="swipeToReload($event)" v-bind:enabled="true" class='swipe-container'>
-    </v-touch> -->
-    <router-view></router-view>
-  </section>
+      <router-view></router-view>
+    </section>
 
     <footer id='primary-menu'>
       <router-link to='/about'>
@@ -48,11 +46,20 @@
 </main>
 </template>
 <script>
+import { mapState } from 'vuex'
 import post from '../components/Post.vue'
 export default {
   data () {
     return {};
   },
+  computed: mapState({
+    nombre: state => state.usuario.nombre,
+    apellidos: state => state.usuario.apellidos,
+    bio: state => state.usuario.bio,
+    email: state => state.usuario.email,
+    codigo: state => state.usuario.codigo,
+    avatar: state => state.usuario.avatar
+  }),
   methods: {
     swipeToReload(e) {
       alert('Reloading');

@@ -155,6 +155,22 @@ input,label{
   color: #453543;
 }
 
+/* MAIN GRID CONTAINER*/
+.grid-container {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6,50vw);
+  display: grid;
+  overflow-y: scroll;
+  width: 100%;
+  height: 80%;
+  scroll-behavior:smooth;
+}
+.grid-container div:nth-of-type(1),.grid-container div:nth-of-type(4),.grid-container div:nth-of-type(5),.grid-container div:nth-of-type(8),.grid-container div:nth-of-type(9),.grid-container div:nth-of-type(12){
+  background:#453543;
+}
+.grid-container div:nth-of-type(2), .grid-container div:nth-of-type(3),.grid-container div:nth-of-type(6),.grid-container div:nth-of-type(7),.grid-container div:nth-of-type(10),.grid-container div:nth-of-type(11){
+  background:#ACCB53;
+}
 
 /* TRANSITION CLASSES */
 .fade-enter-active, .fade-leave-active {

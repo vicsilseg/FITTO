@@ -4,7 +4,7 @@
         <header>
             <h2>Galería</h2>
         </header>
-        <section class='gallery-container'>
+        <section class='grid-container'>
             <div v-for="picture in pictures" :key='picture' class='gallery-pic'></div>
         </section>
     </div>
@@ -51,21 +51,6 @@ header {
 }
 header h2 {
   margin: 0;
-}
-.gallery-container {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6,50vw);
-  display: grid;
-  overflow-y: scroll;
-  width: 100%;
-  height: 80%;
-  scroll-behavior:smooth;
-}
-.gallery-container div:nth-of-type(1),.gallery-container div:nth-of-type(4),.gallery-container div:nth-of-type(5),.gallery-container div:nth-of-type(8),.gallery-container div:nth-of-type(9),.gallery-container div:nth-of-type(12){
-  background:#453543;
-}
-.gallery-container div:nth-of-type(2), .gallery-container div:nth-of-type(3),.gallery-container div:nth-of-type(6),.gallery-container div:nth-of-type(7),.gallery-container div:nth-of-type(10),.gallery-container div:nth-of-type(11){
-  background:#ACCB53;
 }
 /* .gallery-pic{
     box-shadow: inset 0 -1px 3rem 1rem rgba(104, 104, 104, 0.404);
